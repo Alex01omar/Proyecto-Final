@@ -13,13 +13,13 @@ int ingresar_cedula(long int &a) {
     int valido = 0;
 
     while (!valido) {
-        cout << "\nIngrese el número de cédula: ";
+        cout << "\nIngrese el numero de cedula: ";
         cin >> entrada;
 
         valido = 1;
         for (size_t i = 0; i < entrada.length(); i++) {
             if (!isdigit(entrada[i])) {
-                cout << "Error: Ingrese solo números. Inténtelo nuevamente." << endl;
+                cout << "Error: Ingrese solo numeros. Intentelo nuevamente." << endl;
                 valido = 0;
                 break;
             }
@@ -57,7 +57,7 @@ int validar_cedula(long int x, int y[dim10]) {
     if (res == y[9]) {
         return 1;
     } else {
-        cout << "\nCédula inválida, por favor vuelva a ingresar." << endl;
+        cout << "\nCedula invalida, por favor vuelva a ingresar." << endl;
         return 0;
     }
 }
@@ -72,7 +72,7 @@ int main() {
             ingresar_cedula(cedu);
             ddig = trunc(cedu / 100000000);
             if (cedu > 3059999999 || cedu < 1000000000 || ddig == 25 || ddig == 26 || ddig == 27 || ddig == 28 || ddig == 29) {
-                cout << "\nCédula incorrecta, por favor ingrésela nuevamente." << endl;
+                cout << "\nCedula incorrecta, por favor ingresela nuevamente." << endl;
             }
         } while (cedu > 3059999999 || cedu < 1000000000 || ddig == 25 || ddig == 26 || ddig == 27 || ddig == 28 || ddig == 29);
         veri = validar_cedula(cedu, cedula);
